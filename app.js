@@ -11,6 +11,7 @@ import authRoutes from './routes/auth.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
+
 dotenv.config();
 
 const app = express();
@@ -35,8 +36,8 @@ app.use('/api', dataRoutes);
 app.use('/auth', authRoutes);
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
 
 export default app;
