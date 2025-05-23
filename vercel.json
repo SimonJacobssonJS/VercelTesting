@@ -1,0 +1,19 @@
+// vercel.json (at your repo root)
+{
+  "version": 2,
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    // 1) Any request starting with /api/ goes to your function
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    },
+    // 2) Everything else falls back to static in /public
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ]
+}
